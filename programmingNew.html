@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>JS</title>
+
+    <style>
+        .a {
+            color: red;
+        }
+
+        .b {
+            color: blue;
+        }
+
+        .c {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    Name : <input type="text" id="name" onkeypress="done()">
+    <span class="a">abc</span>
+    <span class="a">xyz</span>
+
+    <span id="forToggle">NEW TEXT</span>
+
+    <p hidden="hidden" class="a" id="errorp">This is an error</p>
+
+    <ul id="fruits">
+        
+    </ul>   
+
+    <script>
+
+        function done() {
+            // 1 --------pure JavaScript-----------------
+            // var n = document.getElementById('name').value;
+            // console.log(n);
+
+            // var s = document.getElementsByClassName('a');
+            // console.log(s);
+
+
+
+
+            // 2 --------jQuery-----------------
+            //id ko # k sath krain gy or class ko . phr aagy likhy gy jis bhi name hoga id ya class ka
+            var n = $('#name').val();
+            console.log(n);
+
+   
+            if(n == "error")
+            {
+                $('#errorp').fadeIn();
+            }
+            else
+            {
+                $('#errorp').fadeOut();
+            }
+
+
+           // $('.a').addClass('b').removeClass('a');
+           // $('#forToggle').toggleClass('c');
+        }
+        
+        var fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Tomato', 'Watermelon'];
+
+        var h = "";
+
+        $.each(fruits, function(index, value){ //index = a, value = b
+
+            h += '<li>'+value+'</li>';            
+        });
+        console.log(h);
+
+        $('#fruits').html(h);
+
+
+
+
+        var student = new Object();
+
+        student.name = "Ali Dilawar";
+        student.age = 23;
+        student.rollNum = 'Ep-1849111';
+
+        student.subject = ['Eng', 'Urdu', 'Math'];
+
+        console.log(student);
+
+        // ------------JSON---------------------
+        var str = '{"name":"Ali", "rollnumber":"Ep1849111"}';
+        console.log(str);
+
+        var o = JSON.parse(str);
+        console.log(o);
+
+        console.log(o.name);
+        o.name = "Ali Dilawar";
+        console.log(o.name);
+
+        o.age="23";
+        console.log(o);
+
+        str = JSON.stringify(o);
+        console.log(str);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var ObjArr = [];
+
+        for (i = 0; i < 10; i++) {
+            var student = new Object();
+
+            student.name = "Ali Dilawar" + i;
+            student.age = 23 * i;
+            student.rollNum = 'Ep-1849111' + i;
+
+            student.subject = ['Eng', 'Urdu', 'Math', i];
+
+            ObjArr.push(student);
+        }
+        console.log(ObjArr);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        .red{
+            color: blue;
+        }
+        .blue{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Intro to javaScript</h1>
+    Write a number : <input type="number" id="number" min="0">
+    <span onclick="generateTable()">Generate Table</span>
+    <p id="res"></p>
+
+    <script>
+        // --------------Vedio one---------------------
+        console.log('Hello world');
+
+        var a = 10;
+        var b = 3;
+        var c = a / b;
+        console.log("Value of c is: " + c);
+
+        if (a == b) {
+            console.log("a is equal to b");
+        } else {
+            console.log("a is not equal to b");
+        }
+
+        function generateTable() {
+            var r = document.getElementById('number').value;
+            console.log("r is " + r);
+
+            if (r%2 == 0) {
+                c = 'blue';
+            } else {
+                c = 'red';
+            }
+            
+            for (i = 0; i <= 10; i++)
+            {
+                document.getElementById('res').innerHTML += '<p class="'+c+'">' + r + " * " + i + " = " + (r * i) + '</p><br>';
+            }
+
+        }
+
+        var t = 5;
+        for (i = 0; i <= 10; i++) {
+            console.log(t + " * " + i + " = " + (t * i));
+            document.writeln('<p>' + t + " * " + i + " = " + (t * i) + '</p><br>');
+        }
+
+        c = 'v';
+        switch (c) {
+            case 'a': console.log("its a ");
+                break;
+            case 'b': console.log("its b ");
+                break;
+            case 'c': console.log("its c ");
+                break;
+
+            default: console.log("unknown");
+        }
+
+        var s = "Hello World";
+        s += " and hello Mars";
+
+        console.log(s);
+        function plus(a, b) {
+            var c = a * b;
+            return c;
+        };
+
+        z = plus(5, 5);
+        console.log("z = " + z);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

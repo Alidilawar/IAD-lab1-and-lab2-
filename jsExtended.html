@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <h1>HELLO WORLD</h1>
+    <form>
+
+        inp1: <input type="text" id="number1" />
+        inp2: <input type="text" id="number2" />
+
+        Opp: + <input type="radio" id="plus" name="opp">
+         - <input type="radio" id="minus" name="opp">
+         * <input type="radio" id="multiply" name="opp">
+         / <input type="radio" id="divide" name="opp">
+
+        <span onclick="sum()">Submit</span></br>
+        <span id="output"></span>
+    </form>
+
+    <script>
+
+        function sum() {
+            // debugger;
+            var a = document.getElementById('number1').value;
+            var b = document.getElementById('number2').value;
+
+            x = parseInt(a);
+            y = parseInt(b);
+
+           
+            /*
+            if (condition) 
+            {
+                var = value1;
+            } 
+            else 
+            {
+                var = value2;
+            }
+            
+            Ternary Operator
+            var = (condition) ? value1 : value2;
+            */
+           
+           var o = (isNaN(x) || isNaN(y)) ? "Check your input" : "The sum is " + getAns(x,y);
+
+           document.getElementById('output').innerText = o;
+        }
+
+        function getAns(x,y){
+            var ans = 0;
+            if (document.getElementById('plus').checked) {
+                ans = x + y;
+            }
+            else if(document.getElementById('minus').checked)
+            {
+              ans = x-y;
+            }
+            else if(document.getElementById('multiply').checked)
+            {
+              ans = x*y;
+            }
+            else if(document.getElementById('divide').checked)
+            {
+              ans = x/y;
+            }        
+            return ans;   
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js loop</title>
+</head>
+<body>
+    Generate Table For : <input type="number" id="number">
+    <span onclick="generateTable()">Generate Table!</span>
+    <br>
+    <div id="table"></div>
+
+    <script>
+        function generateTable(){
+            var number = parseInt(document.getElementById('number').value);
+
+            var html = "";
+
+            for (let i = 1;  i<= 10; i++)
+            {
+             html += "<span>" + number + " * " + i + " = " + (number * i) + "</span><br>";              
+            }
+            console.log(html);
+
+            document.getElementById('table').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

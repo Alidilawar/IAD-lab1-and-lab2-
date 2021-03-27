@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htmlAsOutput</title>
+</head>
+<body>
+    Rows : <input type="number" id="rows">
+    column : <input type="number" id="cols">
+
+    <span onclick="generateTable()">Generate Table!</span>
+
+    <div id="output"></div>
+
+    <script>
+
+        // function generateTable(){
+        //     var rows = parseInt(document.getElementById('rows').value);
+        //     var cols = parseInt(document.getElementById('cols').value);
+
+        //     var html = "";
+
+        //     html += '<table border="1px">';
+        //     for (let i = 0; i < rows; i++) {
+        //         html += '<tr>';
+        //         for (let j = 0; j < cols; j++) {
+        //             html += '<td>' + i + '.' + j + '</td>';                    
+        //         }
+        //         html += '</tr>';                
+        //     }
+        //     html += '</table>';
+
+        //     document.getElementById('output').innerHTML = html;
+        // }
+
+        function generateTable(){
+            var rows = parseInt(document.getElementById('rows').value);
+            var cols = parseInt(document.getElementById('cols').value);
+
+            var html = "";
+
+            html += '&lt;table border="1px"&gt;';
+            for (let i = 0; i < rows; i++) {
+                html += '&lt;tr&gt;';
+                for (let j = 0; j < cols; j++) {
+                    html += '&lt;td&gt;' + i + '.' + j + '&lt;/td&gt;';                    
+                }
+                html += '&lt;/tr&gt;';                
+            }
+            html += '&lt;/table&gt;';
+
+            document.getElementById('output').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

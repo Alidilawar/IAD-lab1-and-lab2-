@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic html</title>
+</head>
+
+
+<body>
+
+    <!-- view number of product : <input type="number" id="Boxes"> -->
+    <span onclick="showBoxes()">Show!</span>
+    <div id="output"></div>
+
+    "&lt;div&gt;&lt;/div&gt;"
+    <script>
+
+        var arr = [];
+
+        var pro1 = {
+            name: 'HP Laptop',
+            desc: 'Cheap prices',
+            id: 1011
+        }
+        var pro2 = {
+            name: 'Samsung',
+            desc: 'smart price',
+            id: 2011
+        }
+        var pro3 = {
+            name: 'Digital watch',
+            desc: 'water prove',
+            id: 3011
+        }
+
+        arr.push(pro1);
+        arr.push(pro2);
+        arr.push(pro3);
+
+        console.log(arr);
+
+        function showBoxes() {
+
+            var html = "";
+            arr.forEach((value, index) => {
+                html += '<div id="box_' + index + '" style="border: 1px solid red;">';
+                html += '<h1>' + value.name + '</h1>';
+                html += '<p>' + value.desc + '</p>';
+                html += '<br>';
+                html += '<span onclick="viewDetails(' + value.id + ')">View Details</span>';
+                html += '</div>';
+
+            })
+
+            document.getElementById('output').innerHTML = html;
+        }
+
+
+        function viewDetails(id) {
+            alert("details for id = " + id);
+        }
+    </script>
+
+</body>
+
+</html>
